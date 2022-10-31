@@ -9,15 +9,26 @@ router.get('/create', (req, res)=> {
 
 router.post('/create', async (req, res)=> {
     try {
-        const celebrity1 = await CelebrityModel.create({
+        await CelebrityModel.create({
             name: req.body.name,
             occupation: req.body.occupation,
             catchPhrase: req.body.catchPhrase,
         })
-        res.redirect('celebrities', {celebrity1})
+        res.redirect('/celebrities')
     } 
     catch(err) {
         res.render('celebrities/new-celebrity')
+    }
+
+})
+
+router.get('/', async (req, res )=> {
+    try{
+        const allCelebrities = await CelebrityModel.find()
+        res.render('celebrities/celebrities', {allCelebrities})
+    }
+    catch(err) {
+        console.log('There as been an error in displaying all celebrities.')
     }
 
 })
