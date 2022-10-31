@@ -1,0 +1,10 @@
+<h2>Movie details</h2>
+<p>Title: <%= oneMovie.title %> </p>
+<p>Genre: <%= oneMovie.genre %> </p>
+<p>Plot: <%= oneMovie.plot %> </p>
+<p>Plot: <%= oneMovie.plot %> </p>
+<%= oneMovie.cast.forEach(element => { %>
+    <p><%= element.name %> </p>
+    <p><%= element.occupation %> </p>
+    <p><%= element.catchPhrase %> </p>
+<% }) %> 

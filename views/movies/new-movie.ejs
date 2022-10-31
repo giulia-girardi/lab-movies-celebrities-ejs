@@ -1,0 +1,14 @@
+<h2>Add a movie:</h2>
+<form action="" method="POST">
+    <label for="Title">Title<input type="text" name="title"></label>
+    <label for="Genre">Genre<input type="text" name="genre"></label>
+    <label for="Plot">Plot<input type="text" name="plot"></label>
+    <label for="Cast"> Cast</label>
+    <select name="cast" multiple>
+        <% allCelebrities.forEach(celebrity => { %>
+            <option value='<%- celebrity._id %>'>  <%= celebrity.name %> </option>
+        <% }) %>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+

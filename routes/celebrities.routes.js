@@ -30,7 +30,6 @@ router.get('/', async (req, res )=> {
     catch(err) {
         console.log('There as been an error in displaying all celebrities.')
     }
-
 })
 
 module.exports = router
